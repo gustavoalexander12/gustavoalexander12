@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="1000" height="320" viewBox="0 0 1000 320">
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080d1c"/>
+      <stop offset="100%" stop-color="#19133d"/>
+    </linearGradient>
+
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <pattern id="grid" width="35" height="35"
+             patternUnits="userSpaceOnUse">
+      <path d="M35 0H0V35" fill="none"
+            stroke="#526080" stroke-opacity=".16"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .pulse {
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      50% { opacity: .25; }
+    }
+
+    .move {
+      animation: move 5s linear infinite;
+    }
+
+    @keyframes move {
+      to { transform: translateX(900px); }
+    }
+
+    .blink {
+      animation: blink 1s steps(2) infinite;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .orbit {
+      animation: orbit 12s linear infinite;
+      transform-origin: 790px 150px;
+    }
+
+    @keyframes orbit {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+
+  <rect width="1000" height="320" rx="18" fill="url(#bg)"/>
+  <rect width="1000" height="320" fill="url(#grid)"/>
+
+  <g fill="none" stroke="url(#neon)" opacity=".6">
+    <path d="M0 70H180V110H240"/>
+    <path d="M1000 240H850V200H800"/>
+    <path d="M0 270H120V230H180"/>
+    <path d="M850 50H920V90H1000"/>
+  </g>
+
+  <g fill="#00e5ff" filter="url(#glow)">
+    <circle cx="180" cy="110" r="4" class="pulse"/>
+    <circle cx="850" cy="200" r="4" class="pulse"/>
+    <circle cx="120" cy="230" r="4" class="pulse"/>
+    <circle cx="920" cy="90" r="4" class="pulse"/>
+  </g>
+
+  <g class="orbit" fill="none" stroke="url(#neon)" stroke-width="2">
+    <circle cx="790" cy="150" r="85" stroke-dasharray="8 12"/>
+    <circle cx="790" cy="150" r="60" stroke-dasharray="3 10"/>
+    <circle cx="790" cy="65" r="5" fill="#00e5ff"/>
+  </g>
+
+  <circle cx="790" cy="150" r="30"
+          fill="#171d3d" stroke="#00e5ff"
+          stroke-width="2" filter="url(#glow)"/>
+
+  <text x="790" y="159" text-anchor="middle"
+        font-size="25" font-family="monospace"
+        font-weight="bold" fill="#ffffff">
+    &lt;/&gt;
+  </text>
+
+  <text x="65" y="65" fill="#00e5ff"
+        font-family="monospace" font-size="13"
+        letter-spacing="3">
+    GUSTAVO // DEVELOPER IN PROGRESS
+  </text>
+
+  <text x="65" y="130" fill="#ffffff"
+        font-family="Arial" font-size="34"
+        font-weight="bold">
+    GUSTAVO ALEXANDER
+  </text>
+
+  <text x="65" y="170" fill="url(#neon)"
+        font-family="Arial" font-size="29"
+        font-weight="bold">
+    MAMANI ALMOGUERA
+  </text>
+
+  <text x="65" y="210" fill="#c4c9df"
+        font-family="monospace" font-size="15">
+    ENGENHARIA DE SOFTWARE
+  </text>
+
+  <text x="65" y="245" fill="#8c9bbd"
+        font-family="monospace" font-size="12">
+    APRENDER // PRATICAR // DESENVOLVER
+  </text>
+
+  <text x="65" y="285" fill="#00e5ff"
+        font-family="monospace" font-size="12">
+    C  •  PYTHON (EM APRENDIZADO)  •  HTML  •  CSS  •  SQL
+  </text>
+
+  <rect x="-100" y="305" width="100" height="2"
+        fill="url(#neon)" class="move"/>
+
+  <text x="940" y="30" fill="#39ff9c"
+        font-family="monospace" font-size="11"
+        text-anchor="end">
+    SYSTEM ONLINE
+  </text>
+
+  <circle cx="955" cy="26" r="4"
+          fill="#39ff9c" class="blink"/>
+
+</svg>
