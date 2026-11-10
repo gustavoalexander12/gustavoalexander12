@@ -1,3 +1,5 @@
+![Meu Banner](./header.svg)
+
 ## Hi there 👋
 
 <!--
